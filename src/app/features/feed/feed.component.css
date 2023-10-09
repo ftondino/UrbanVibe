@@ -1,0 +1,31 @@
+.example-card {
+  width: 55rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  row-gap: 4rem;
+  padding: 4rem 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+mat-card-content span {
+  color: rgb(7, 56, 163);
+  font-weight: 500;
+}
+
+.comment-container {
+  border-top: 0.5px solid rgb(204, 204, 204);
+}
+
+.search-n-post {
+  display: flex;
+  justify-content: space-around;
+}

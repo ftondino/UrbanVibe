@@ -1,0 +1,25 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> Il tuo contributo per città migliori </mat-panel-title>
+    <mat-panel-description> Scrivi qui la tua idea! </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form [formGroup]="postForm">
+    <mat-form-field>
+      <mat-label>Titolo</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>La mia visione per una città migliore è... </mat-label>
+      <textarea formControlName="body" matInput></textarea>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="!postForm.valid"
+    >
+      Pubblica
+    </button>
+  </form>
+</mat-expansion-panel>

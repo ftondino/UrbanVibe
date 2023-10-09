@@ -1,0 +1,11 @@
+<mat-dialog-content>
+  <p>
+    {{ data.message }}
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" (click)="confirm()">
+    Conferma
+  </button>
+  <button mat-raised-button mat-dialog-close>Annulla</button>
+</mat-dialog-actions>

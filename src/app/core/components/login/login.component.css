@@ -1,0 +1,50 @@
+.example-card {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem;
+}
+
+.text-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading,
+.subheading,
+.link-register,
+label {
+  font-weight: 500;
+}
+
+.heading {
+  color: rgb(61, 61, 61);
+  font-size: 2.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  color: rgb(125, 125, 125);
+
+  line-height: 3;
+  font-size: 1.2rem;
+}
+
+.link-register {
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color: rgb(0, 114, 214);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+}

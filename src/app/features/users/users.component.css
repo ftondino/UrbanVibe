@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.responsive-table {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-container {
+  font-size: 14px;
+  width: 30%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 11%;
+}

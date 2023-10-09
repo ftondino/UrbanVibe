@@ -1,0 +1,94 @@
+<h1>Registrazione</h1>
+
+<mat-stepper linear #stepper>
+  <mat-step [stepControl]="registrationForm" [editable]="isEditable">
+    <form [formGroup]="registrationForm" #formOne="ngForm">
+      <ng-template matStepLabel>Inserisci i tuoi dati</ng-template>
+      <div class="input-container">
+        <div>
+          <mat-form-field
+            ><mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Name"
+              formControlName="name"
+              required
+            />
+            <mat-error>Nome non valido</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field
+            ><mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              required=""
+            />
+            <mat-error>Email non valida</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status" required>
+            <mat-option value="active">active</mat-option>
+            <mat-option value="inactive">inactive</mat-option>
+          </mat-select>
+          <mat-error>Seleziona uno status</mat-error>
+        </mat-form-field>
+
+        <div>
+          <mat-radio-group formControlName="gender" required>
+            <div>Gender*</div>
+            <mat-radio-button color="primary" value="male"
+              >Male</mat-radio-button
+            >
+            <mat-radio-button color="primary" value="female"
+              >Female</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          mat-button
+          matStepperNext
+          [disabled]="!registrationForm.valid"
+        >
+          Avanti
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="tokenForm" [editable]="isEditable">
+    <form [formGroup]="tokenForm" #formTwo="ngForm">
+      <ng-template matStepLabel>Inserisci il tuo token</ng-template>
+      <mat-form-field>
+        <mat-label>Token</mat-label>
+        <input
+          matInput
+          formControlName="token"
+          placeholder="Il tuo token"
+          required
+        />
+      </mat-form-field>
+      <div>
+        <button type="submit" mat-button matStepperPrevious>Indietro</button>
+        <button type="submit" mat-button matStepperNext>Avanti</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Registrati</ng-template>
+    <p>Completa la registrazione</p>
+    <div>
+      <button type="button" mat-button matStepperPrevious>Indietro</button>
+      <button type="button" mat-button (click)="onSubmit()">Registrati</button>
+    </div>
+  </mat-step>
+</mat-stepper>

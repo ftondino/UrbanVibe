@@ -1,0 +1,44 @@
+<mat-toolbar>
+  <mat-icon>eco</mat-icon>
+
+  <span>UrbanVibe</span>
+  <span class="example-spacer"></span>
+
+  <div>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      [routerLinkActive]="'active-link'"
+      [routerLink]="['users']"
+    >
+      <mat-icon>group</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      [routerLinkActive]="'active-link'"
+      [routerLink]="['feed']"
+    >
+      <mat-icon>forum</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      [routerLinkActive]="'active-link'"
+    >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      (click)="confirmDialog()"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
