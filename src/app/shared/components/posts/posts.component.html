@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="card-container" *ngFor="let post of feedService.filteredPosts">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle
+          >User id: <span>{{ post.user_id }}</span></mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post.body }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="toggleComments(post.id)">Commenti</button>
+      </mat-card-actions>
+      <mat-card
+        class="comment-container"
+        *ngIf="feedService.showComments[post.id]"
+        class="example-card"
+        ><ng-container *ngIf="!feedService.isLoading[post.id]; else loading">
+          <ng-container
+            *ngIf="post.comments && post.comments.length > 0; else noComments"
+          >
+            <div *ngFor="let comment of post.comments">
+              <mat-card-header>
+                <mat-card-subtitle>{{ comment.name }} dice:</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ comment.body }}</p>
+              </mat-card-content>
+            </div>
+          </ng-container>
+          <ng-template #noComments>
+            <p>Non ci sono commenti.</p>
+          </ng-template>
+        </ng-container>
+        <ng-template #loading>
+          <mat-spinner></mat-spinner>
+        </ng-template>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>

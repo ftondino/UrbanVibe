@@ -9,8 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class UsersService {
   public usersSubject = new BehaviorSubject<User[]>([]);
   users$: Observable<User[]> = this.usersSubject.asObservable();
-  token: any = localStorage.getItem('token');
-  user: any = JSON.parse(localStorage.getItem('user')!);
+  token: string = '';
+  user: any = {};
 
   private apiUrl = 'https://gorest.co.in/public/v2/users';
 
@@ -18,6 +18,15 @@ export class UsersService {
 
   setUsers(users: User[]): void {
     this.usersSubject.next(users);
+  }
+
+  setUser() {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    const token = localStorage.getItem('token');
+    if (user && token) {
+      this.user = user;
+      this.token = token;
+    }
   }
 
   newUser(user: any, token: string): Observable<any> {

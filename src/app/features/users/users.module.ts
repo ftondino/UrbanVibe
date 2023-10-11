@@ -8,7 +8,6 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
-import { PersonalAccountComponent } from './components/personal-account/personal-account.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { PersonalAccountComponent } from './components/personal-account/personal
     UserDetailComponent,
     NewUserComponent,
     ConfirmDialogComponent,
-    PersonalAccountComponent,
   ],
   imports: [
     CommonModule,

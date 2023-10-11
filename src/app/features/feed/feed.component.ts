@@ -12,8 +12,4 @@ export class FeedComponent implements OnInit {
   ngOnInit(): void {
     this.feedService.getPosts();
   }
-
-  toggleComments(postId: number): void {
-    this.feedService.toggleComments(postId);
-  }
 }

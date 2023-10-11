@@ -53,20 +53,30 @@ export class RegisterComponent {
               JSON.stringify({ ...response, token: this.tokenForm.value.token })
             );
             localStorage.setItem('token', this.tokenForm.value.token);
+            this.usersService.setUsers;
             this.router.navigate(['/login']);
             this.snackBar.open('Utente creato con successo!', 'Ok', {
               duration: 3000,
             });
           },
           error: (error) => {
-            this.snackBar.open(
-              "C'è stato un errore durante la creazione dell'utente",
-              'Riprova',
-              {
-                duration: 3000,
-              }
-            );
-            console.error(error);
+            if (error.status === 422) {
+              this.snackBar.open(
+                "L'email inserita è già registrata",
+                'Riprova',
+                {
+                  duration: 3000,
+                }
+              );
+            } else {
+              this.snackBar.open(
+                "C'è stato un errore durante la creazione dell'utente",
+                'Riprova',
+                {
+                  duration: 3000,
+                }
+              );
+            }
           },
         });
     }

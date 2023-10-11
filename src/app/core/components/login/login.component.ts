@@ -35,10 +35,11 @@ export class LoginComponent {
     let inputEmail = this.loginForm.value.email;
     let inputToken = this.loginForm.value.token;
 
-    let user = this.usersService.user;
+    let user = JSON.parse(localStorage.getItem('user')!);
     let token = localStorage.getItem('token');
     if (user && inputEmail === user.email && inputToken === token) {
       this.authService.isLoggedIn = true;
+      this.usersService.setUser();
       this.router.navigate(['/users']);
     } else {
       this.snackBar.open('Dati errati o non esistenti', 'Riprova', {

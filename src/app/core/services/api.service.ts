@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
 
 const url = 'https://gorest.co.in/public/v2/';
 
@@ -9,7 +8,7 @@ const url = 'https://gorest.co.in/public/v2/';
   providedIn: 'root',
 })
 export class ApiService {
-  private token: string = environment.ilTuoToken;
+  token: any = localStorage.getItem('token');
 
   constructor(private http: HttpClient) {}
 
