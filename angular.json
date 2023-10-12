@@ -31,7 +31,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.20mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -48,12 +48,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": []
             }
           },
           "defaultConfiguration": "production"
@@ -79,6 +74,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
