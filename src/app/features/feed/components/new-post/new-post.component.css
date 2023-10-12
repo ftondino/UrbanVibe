@@ -2,3 +2,11 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 934px) {
+  mat-panel-description {
+    width: 100%;
+  }
+}

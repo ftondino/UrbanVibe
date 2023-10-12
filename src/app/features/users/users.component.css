@@ -24,3 +24,40 @@ table {
   justify-content: space-around;
   width: 11%;
 }
+
+.mat-cell {
+  padding: 2rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 934px) {
+  .button-container {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-container {
+    width: 23%;
+  }
+
+  table {
+    border: 0;
+  }
+
+  table tr[mat-row] {
+    border-bottom: 5px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  table th[mat-header-cell] {
+    display: none;
+  }
+
+  table td[mat-cell] {
+    height: 48px;
+  }
+}

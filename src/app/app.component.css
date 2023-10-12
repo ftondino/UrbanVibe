@@ -1,3 +1,9 @@
 .main-container {
   margin: 3rem 5rem;
 }
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    margin: 3rem 0rem;
+  }
+}

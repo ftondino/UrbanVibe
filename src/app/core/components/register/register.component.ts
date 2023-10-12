@@ -47,7 +47,6 @@ export class RegisterComponent {
         .newUser(this.registrationForm.value, this.tokenForm.value.token)
         .subscribe({
           next: (response) => {
-            console.log(response);
             localStorage.setItem(
               'user',
               JSON.stringify({ ...response, token: this.tokenForm.value.token })

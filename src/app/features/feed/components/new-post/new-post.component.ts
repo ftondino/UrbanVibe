@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-new-post',
@@ -27,10 +28,15 @@ export class NewPostComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(panel: MatExpansionPanel) {
     this.feedService.newPost(this.postForm.value).subscribe(() => {
       this.feedService.getPosts();
       this.snackBar.open('Post pubblicato', 'Ok', { duration: 3000 });
+      this.postForm.reset();
+      Object.keys(this.postForm.controls).forEach((key) => {
+        this.postForm.controls[key].setErrors(null);
+      });
+      panel.close();
     });
   }
 }

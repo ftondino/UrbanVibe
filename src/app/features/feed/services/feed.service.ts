@@ -16,6 +16,7 @@ export class FeedService {
   token = this.usersService.token;
   user = this.usersService.user;
   apiUrl = 'https://gorest.co.in/public/v2/users';
+  noPosts: boolean | undefined;
 
   constructor(
     private apiService: ApiService,
@@ -69,6 +70,8 @@ export class FeedService {
     } else {
       this.filteredPosts = this.posts;
     }
+
+    this.noPosts = this.filteredPosts.length === 0;
   }
 
   // PUBBLICARE POST
