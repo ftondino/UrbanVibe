@@ -1,0 +1,26 @@
+.container {
+  padding: 2.5rem 4rem;
+}
+
+.title {
+  margin-bottom: 2.5rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons-container {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+mat-radio-group > div {
+  color: grey;
+}
+
+mat-radio-button {
+  padding-right: 1rem;
+}

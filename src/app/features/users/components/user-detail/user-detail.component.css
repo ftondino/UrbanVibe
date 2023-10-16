@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 3rem;
+}
+
+.container div {
+  padding: 2rem;
+}
+
+mat-divider {
+  margin-bottom: 4rem;
+}

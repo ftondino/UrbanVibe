@@ -1,0 +1,27 @@
+<h1>Dettagli dell'user {{ user?.id }}</h1>
+<div class="container">
+  <div>
+    <h2>Nome:</h2>
+    <p>{{ user?.name }}</p>
+  </div>
+
+  <div>
+    <h2>Email:</h2>
+    <p>{{ user?.email }}</p>
+  </div>
+
+  <div>
+    <h2>Genere:</h2>
+    <p>{{ user?.gender }}</p>
+  </div>
+  <div>
+    <h2>Status:</h2>
+    <p>{{ user?.status }}</p>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
+
+<h1>Post pubblicati</h1>
+
+<app-posts></app-posts>
