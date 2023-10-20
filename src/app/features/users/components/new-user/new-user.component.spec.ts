@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('NewUserComponent', () => {
   let component: NewUserComponent;
@@ -25,6 +26,10 @@ describe('NewUserComponent', () => {
         MatRadioModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+      ],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
       ],
     });
     fixture = TestBed.createComponent(NewUserComponent);
